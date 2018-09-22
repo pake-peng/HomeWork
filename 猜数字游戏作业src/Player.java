@@ -2,15 +2,15 @@ import java.util.Scanner;
 
 /**
  * 
- * @author ÅíÅÈ
- * ÊôĞÔ£º
- * 		ĞÕÃû
- * 		ÓÎÏ·¶ÔÏó
- * ·½·¨:
- *		¿ªÊ¼ÓÎÏ·
- *		¼ÌĞøÓÎÏ·
- *		ÏÔÊ¾µÃ·Ö
- *		ÍË³öÓÎÏ·
+ * @author å½­æ¹ƒ
+ * å±æ€§ï¼š
+ * 		å§“å
+ * 		æ¸¸æˆå¯¹è±¡
+ * æ–¹æ³•:
+ *		å¼€å§‹æ¸¸æˆ
+ *		ç»§ç»­æ¸¸æˆ
+ *		æ˜¾ç¤ºå¾—åˆ†
+ *		é€€å‡ºæ¸¸æˆ
  *		
  */
 
@@ -25,27 +25,27 @@ public class Player
 		continueGame = true;
 	}
 	
-	//¿ªÊ¼ÓÎÏ·º¯Êı
+	//å¼€å§‹æ¸¸æˆå‡½æ•°
 	public void StartGame()
 	{
 		Scanner inpute = new Scanner(System.in);
 		
-		//µÚÒ»´Î½øÈëÓÎÏ·µ¯³öµÄĞÅÏ¢ÊäÈë
+		//ç¬¬ä¸€æ¬¡è¿›å…¥æ¸¸æˆå¼¹å‡ºçš„ä¿¡æ¯è¾“å…¥
 		if (continueGame == true)
 		{
 			gb.printMenu();
 			System.out.println("*** please enter you name ***");
 			setName(inpute.next());
 			System.out.println("@" + name + " welcom to Peng Pai game , good luck to you" );
-			System.out.println("you orginal score is 6  come on !!!!" );
+			System.out.println("you orginal score is 8 come on !!!!" );
 		}
 		
 		gb.setRandomNumber();
-		//ÓÃÀ´¼ÇÂ¼ÏµÍ³²úÉúµÄËæ»úÊı
+		//ç”¨æ¥è®°å½•ç³»ç»Ÿäº§ç”Ÿçš„éšæœºæ•°
 		int n = gb.getRandomNumber(); 
 		boolean testScore =true;
 		
-		//Ñ­»·¼ì²âÅĞ¶ÏÊıÖµÊÇ·ñÕıÈ·
+		//å¾ªç¯æ£€æµ‹åˆ¤æ–­æ•°å€¼æ˜¯å¦æ­£ç¡®
 		while(testScore && true )
 		{
 			System.out.println("please enter you guess Number");
@@ -57,7 +57,7 @@ public class Player
 			testScore = gb.lossScore();
 		}
 		
-		//»ı·Ö²»¹»µÄ´¦Àí·½Ê½
+		//ç§¯åˆ†ä¸å¤Ÿçš„å¤„ç†æ–¹å¼
 		if(testScore == false)
 		{
 			System.out.println("the score less than 0");
@@ -80,12 +80,12 @@ public class Player
 		}
 		
 		else
-			System.out.println("*******¹§Ï²Äã»ñµÃÊ¤Àû £¬Äã»ñµÃ" + gb.getDiffcult() * 20 + "»ı·Ö    ******* ");
+			System.out.println("*******æ­å–œä½ è·å¾—èƒœåˆ© ï¼Œä½ è·å¾—" + gb.getDiffcult() * 20 + "ç§¯åˆ†    ******* ");
 		
 		System.out.println("Do you want to come on Y/N");
 		String s = inpute.next();
 		
-		//¼ì²âÊÇ·ñ¼ÌĞøÓÎÏ·
+		//æ£€æµ‹æ˜¯å¦ç»§ç»­æ¸¸æˆ
 		while(true)
 		{
 			if(s.equals("Y"))
@@ -103,6 +103,7 @@ public class Player
 				break;
 			}
 			System.out.println("cheak you char");
+			s = inpute.next();
 		}
 		
 		inpute.close();
