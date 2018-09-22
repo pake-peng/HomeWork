@@ -49,7 +49,16 @@ public class Player
 		while(testScore && true )
 		{
 			System.out.println("please enter you guess Number");
+			
 			int Gnumber = inpute.nextInt();
+			if(x < 0 || x > gb.getDiffcult())
+			{
+				System.out.println("you enter number isn't in cottect rang, please read ruler or 
+						   take care of you score ")
+				System.out.println("please enter the number again");
+				Gnumber = inpute.nextInt();
+			 }
+						   
 			if( Gnumber == n)
 				break;
 			System.out.println("it is pity that " +  Gnumber + " is not correct number");
