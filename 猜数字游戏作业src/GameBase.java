@@ -1,16 +1,16 @@
 
 /**
  * 
- * @author ÅíÅÈ
+ * @author å½­æ¹ƒ
  * @version java 10
  * 
- * ÊôĞÔ£º
- * 		ÓÃ»§µÃ·Ö£¬Ëæ»úÊı
- * ·½·¨:
- * 		½çÃæ
- * 		Ëæ»úÊıµÄÖØÖÃ
- * 		µÃ·ÖÀÛ¼Æ
- *		Ëæ»úÊıµÄ¼ì²â
+ * å±æ€§ï¼š
+ * 		ç”¨æˆ·å¾—åˆ†ï¼Œéšæœºæ•°
+ * æ–¹æ³•:
+ * 		ç•Œé¢
+ * 		éšæœºæ•°çš„é‡ç½®
+ * 		å¾—åˆ†ç´¯è®¡
+ *		éšæœºæ•°çš„æ£€æµ‹
  */
 import java.lang.*;
 import java.util.Scanner;
@@ -23,12 +23,12 @@ public class GameBase
 	
 	public GameBase()
 	{
-		score = 6;
+		score = 8;
 		randomNumber = -1;
 		diffcult = 1;
 	}
 	
-	//ÉèÖÃËæ»úÊıº¯Êı
+	//è®¾ç½®éšæœºæ•°å‡½æ•°
 	public void setRandomNumber()
 	{
 		randomNumber = (int)(Math.random() * (diffcult * 10)) + 1;
@@ -40,35 +40,35 @@ public class GameBase
 		return randomNumber;
 	}
 	
-	//²Ëµ¥´òÓ¡
+	//èœå•æ‰“å°
 	public void printMenu()
 	{
 		System.out.println("********* Wellcom to paly Guess Game ********* ");
-		System.out.println("********* 1 : crate new game *********");
-		System.out.println("********* 2 : game help *********");
-		System.out.println("********* 3 : set diffcult *********");
+		System.out.println("********* 1 :    crate new game 	 *********");
+		System.out.println("********* 2 :    game help 		 *********");
+		System.out.println("********* 3 :    set diffcult        *********");
 		Scanner in  = new Scanner(System.in);
 		
 		int m = in.nextInt();
 		
 		
-		//¼ì²â2£¬3Çé¿ö,µ¯³ö²Ëµ¥Çé¿ö£¬2£¬3ºóµİ¹éµ÷ÓÃÒ»´Î¸Ãº¯ÊıÓÃÀ´´òÓ¡²Ëµ¥£¬
-		//Èç¹ûÑ¡ÖĞÆäËûÊı×Ö£¬ÔòÏÔÊ¾ÊäÈë´íÎó£¬²¢ÖØĞÂµ÷ÓÃ²Ëµ¥º¯Êı ,Ö±µ½Ñ¡ÖĞ1¿ªÊ¼ÓÎÏ·
+		//æ£€æµ‹2ï¼Œ3æƒ…å†µ,å¼¹å‡ºèœå•æƒ…å†µï¼Œ2ï¼Œ3åé€’å½’è°ƒç”¨ä¸€æ¬¡è¯¥å‡½æ•°ç”¨æ¥æ‰“å°èœå•ï¼Œ
+		//å¦‚æœé€‰ä¸­å…¶ä»–æ•°å­—ï¼Œåˆ™æ˜¾ç¤ºè¾“å…¥é”™è¯¯ï¼Œå¹¶é‡æ–°è°ƒç”¨èœå•å‡½æ•° ,ç›´åˆ°é€‰ä¸­1å¼€å§‹æ¸¸æˆ
 		switch(m)
 		{
 		case 1:
 			break;
 		case 2:
 			System.out.println("the Ruler is : choose the correct number ");
-			System.out.println("the game diffluct have list 1 : 1~10, 2 : 2~20, 3 : 1~30£¬ 4 : 1~40");
+			System.out.println("the game diffluct have list 1 : 1~10, 2 : 2~20, 3 : 1~30ï¼Œ 4 : 1~40");
 			System.out.println(" diffcult 1: loss 1, score 2 : loss 2, 3 : loss 3, 4: loss 4");
 			printMenu();
 			break;
 		case 3:
-			System.out.println("the diffluct you can set is  1 : 1~10, 2 : 2~20, 3 : 1~30£¬ 4 : 1~40");
+			System.out.println("the diffluct you can set is  1 : 1~10, 2 : 2~20, 3 : 1~30ï¼Œ 4 : 1~40");
 			int dTest = in.nextInt();
 			
-			//ÄÑ¶ÈÕıÈ·ÊäÈë¼ì²â
+			//éš¾åº¦æ­£ç¡®è¾“å…¥æ£€æµ‹
 			while((dTest < 1) || (dTest > 4))
 			{
 				System.out.println("1 to 4");
@@ -87,7 +87,7 @@ public class GameBase
 		
 	}
 	
-	//¿Û·Ö»úÖÆ
+	//æ‰£åˆ†æœºåˆ¶
 	public boolean lossScore()
 	{
 		if(score < 0)
@@ -99,7 +99,7 @@ public class GameBase
 
 
 	
-	//³äÇ®º¯Êı
+	//å……é’±å‡½æ•°
 	public void setScore(int m)
 	{
 		if(m>1000)
@@ -116,7 +116,7 @@ public class GameBase
 			score = m;
 	}
 	
-	//·µ»ØÄÑ¶Èº¯Êı
+	//è¿”å›éš¾åº¦å‡½æ•°
 	public int getDiffcult()
 	{
 		return diffcult;
